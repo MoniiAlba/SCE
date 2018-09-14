@@ -1,0 +1,51 @@
+--Ejemplo 2.1
+-- 2
+--Versión estándar
+select NomProf, categoría
+from prof
+where idprof not in 
+        (select idprof
+        from grupo);
+        
+--Con minus (de Oracle)
+select nomprof, categoría
+from prof
+  minus
+select nomprof, categoría
+from prof p, grupo g
+where p.idprof = g.idprof;
+
+-- 3
+select nomal, count(*) "Cant. de cursos"
+from alum a, inscrito i
+where a.cu = i.cu
+group by a.nomal 
+having count (*) >= 2;
+
+-- 4
+select nommat, avg(cast(calif as real)) "Promedio"
+from mater m, historial h
+where calif >= 6 and extract(year from fecha) = extract(year from sysdate)-1 and m.clavem = h.clavem
+group by nommat;
+
+-- 5 
+--Forma Carlitos
+select nommat 
+from (select distinct nommat, calif 
+      from historial h, mater m
+      where h.clavem = m.clavem
+      )
+group by nommat 
+having count(calif) > 2;
+
+--Forma FLOPPY
+select nommat, count(distinct calif) "Cant. de califs. distintas"
+from mater m, historial
+where m.clavem = h.clavem
+group by nommat
+having count(distinct calif) > 2;
+
+--
+select nomal, prom
+from alum a
+where a.prom >= (select avg(prom) from alum);
