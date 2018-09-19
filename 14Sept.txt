@@ -1,0 +1,13 @@
+Errores de infraestructura
+	Desconexiones
+	Time outs
+	Saturación de recursos
+		Sesiones excedidas
+		Agotamiento de los buffers
+
+Errores del proceso
+
+
+---Tipos de proceso---
+
+Síncronos (se espera
