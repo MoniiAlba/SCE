@@ -1,0 +1,86 @@
+Examen 
+
+a) select nomp, estado, ciudad 
+from País p, CdEdo ce, Hotel h, Sitio s
+where p.idp = ce.idp and ce.idce = h.idce and ce.idce = s.idce and ciudad not in 
+	(select ciudad 
+	from CdEdo ce, Hotel h
+	where ce.idce = h.idce)
+
+b) select nompaq, tipo 
+from Paquete p, Visita v, Sitio s, Contiene c, Extra e
+where p.idpaq = v.idpaq and v.ids = s.ids and p.idpaq = c.idpaq and c.idex = e.idex
+	and s.tipo = 'Castillo' and e.tipo = 'Espectáculo musical'
+
+c) select nompaq, sum(extra.costo)
+from Paquete p, Fechas f, Contiene c, Extra e
+where p.idpaq = f.idpaq and p.idpaq = c.idpaq and c.idex = e.idex 
+	and nompaq in 
+		(select nompaq
+		from Paquete p
+		where costo < 20000)
+	and nompaq in 
+		(select nompaq
+		from Paquete p, Fechas f
+		where p.idpaq = f.idpaq and extract(month from f.fechaini) >= 11)
+
+d) select nomh, ciudad
+from Hotel h, CdEdo ce, Incluye i, Paquete p
+where h.idce = ce.idce and h.idh = i.idh and i.idpaq = p.idpaq
+group by idh
+having count (*) >= all
+	(select count (*) 
+	from Hotel h
+	group by idh)
+
+
+
+e) create or replace trigger BorraExtra
+	before delete on Extra
+	for each row
+	declare numPaq int;
+	begin
+	
+	select count(*) into numPaq
+	from Paquete p, Contiene c, Extra e
+	where p.idpaq = c.idpaq and c.idex = e.idex and e.idex = :old.idex;
+
+	dbms_output.put_line('Este extra aparece en ' || numPaq || 'paquetes.');
+
+	delete from Contiene c where :old.idex = c.idex;
+
+	end;
+
+
+
+create or replace procedure actualizaExtra() is
+	boolean b; int id; real por; tupla int; 
+	
+	cursor c1 is
+		select idex, porc, baja from ActExtras;
+	
+	cursor cID is
+		select idex from ActExtras;
+	
+	open c1;
+	open cID;
+	loop
+	fetch c1 into tupla
+	exit when c1%notfound
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
