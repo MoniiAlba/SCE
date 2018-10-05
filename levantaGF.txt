@@ -1,0 +1,12 @@
+program files
+glassfish
+bin
+
+
+asadmin start-domain -->te da 4848 
+	en el browser entra localhost:4848
+	deploy: busca el .war del proyecto de netbeans (en dist)
+asadmin list-applications
+
+en otra cmd ya funciona el .jar :)
+	java -jar tstws.jar
