@@ -1,16 +1,16 @@
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 GRAVE: Info Log
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 ADVERTENCIA: Info Log
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 INFORMACIÓN: Info Log
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 MÁS DETALLADO: Really not important
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 GRAVE: Info Log
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 ADVERTENCIA: Info Log
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 INFORMACIÓN: Info Log
-sep 28, 2018 9:22:50 AM tstlogger.UseLogger doSomeThingAndLog
+oct 18, 2018 6:19:03 PM tstlogger.UseLogger doSomeThingAndLog
 MÁS DETALLADO: Really not important
