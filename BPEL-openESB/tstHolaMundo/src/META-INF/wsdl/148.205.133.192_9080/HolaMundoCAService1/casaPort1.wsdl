@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://j2ee.netbeans.org/wsdl/HolaMundo/src/HolaMundoWSDL" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="HolaMundoCA" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="HolaMundoCA">
+  <import location="http://CC202-02.itam.mx:9080/HolaMundoCA-sun-http-binding/HolaMundo/HolaMundoWSDL.wsdl" namespace="http://j2ee.netbeans.org/wsdl/HolaMundo/src/HolaMundoWSDL">
+    </import>
+  <portType name="dummyCasaPortType">
+  </portType>
+  <binding name="casaBinding1" type="ns:HolaMundoWSDLPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="HolaMundoWSDLOperation">
+      <soap:operation/>
+      <input name="input1">
+        <soap:body namespace="HolaMundoCA" use="literal"/>
+      </input>
+      <output name="output1">
+        <soap:body namespace="HolaMundoCA" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HolaMundoCAService1">
+    <port binding="tns:casaBinding1" name="casaPort1">
+      <soap:address location="http://CC202-02.itam.mx:9080/HolaMundoCAService1/casaPort1"/>
+    </port>
+  </service>
+</definitions>
